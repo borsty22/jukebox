@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<wicket:extend>
+<div align="center">
+<span class="header">CD Übersicht</span>
+	<table width="100%">
+		<tr>
+			<td align="center">
+				<form wicket:id="userSearchForm">
+					<input type="submit" value="Filtern" wicket:id="searchButton" /> <input
+						type="text" wicket:id="searchNameStringTextfield" />
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">
+				<div wicket:id="cdTablePanel" />
+				<form wicket:id="cdTableForm">
+					<input type="submit" value="CD hinzufügen" wicket:id="addButton" />
+				</form>
+			</td>
+		</tr>
+	</table>
+	<div wicket:id="cdPanel" align="center" />
+	</div>
+</wicket:extend>
+</html>

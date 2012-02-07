@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<wicket:extend>
+	<div align="center">
+		<span class="header">Übersicht der Benutzer</span>
+		<div wicket:id="dataTableContainer">
+			<div style="width: 100%; text-align: center; margin: 10px;">
+				<form wicket:id="userSearchForm">
+
+					<input type="submit" value="Filtern" wicket:id="searchButton" />
+					<input type="text" wicket:id="searchNameStringTextfield" />
+
+				</form>
+			</div>
+	
+			<div style="width: 100%; margin: 10px; margin-top: 20px; margin-left: 20px; margin-right: 20px ;">
+				<div wicket:id="userTablePanel" />
+			</div>
+	
+			<form wicket:id="userTableForm">
+				<input type="submit" value="User hinzufügen" wicket:id="addButton"/>
+			</form>
+			
+		</div>
+		<div wicket:id="userPanel" />
+	</div>
+</wicket:extend>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<persistence-unit name="edu.htw.jukebox"
+		transaction-type="RESOURCE_LOCAL">
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.default_schema" value="public" />
+			<property name="current_session_context_class" value="thread" />
+			<property name="connection.pool_size" value="10" />
+		</properties>
+	</persistence-unit>
+</persistence>

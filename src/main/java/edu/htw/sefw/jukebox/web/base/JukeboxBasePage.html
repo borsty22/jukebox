@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+<link rel="icon" href="http://141.45.146.176:8080/img/favicon.png" type="image/png">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Wicket-Jukebox</title>
+</head>
+
+<body>
+
+	<div id="topPanel">
+		<div>
+					<div style="float: left">
+				<img style="max-height: 45px;"alt="Jukebox Logo" src="bilder/jukebox.png">    
+			</div>
+			<span>
+				<div wicket:id="jukeboxMenu" />
+				</span>
+			<span>
+				<ul id="menu" style="float: right;">
+					<li><a href="#" wicket:id="loginLink">login</a> <a href="#"
+						wicket:id="logoutLink">logout</a></li>
+				</ul>
+			</span>
+			
+		</div>
+		
+		<div style="float: none; clear: both;"></div>
+	</div>
+
+	<table class="pagetable">
+	<tr>
+		<td class="pagemargin"> </td>
+		<td class="pagecenter"><wicket:child float="right" /></td>
+		<td class="pagemargin"> </td>
+	</tr>
+	</table>
+
+	<div wicket:id="feedback" />
+</body>
+</html>

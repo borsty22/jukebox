@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+	<wicket:head>
+		<title>test</title>
+			
+			<style type="text/css">
+				div#test2{
+					position: relative; 
+					left:201px; 
+					top:-120px; 
+					height:100px; 
+					width:100px; 
+					background-color:grey; 
+					cursor:help;
+				}
+				div#test2{
+					position: relative; 
+					left:201px; 
+					top:-120px; 
+					height:100px; 
+					width:100px; 
+					cursor:help;
+				}
+				.cdElement{
+					color:black; 
+					float:left;
+					background-color: white; 
+					overflow:hidden; 
+					cursor:move;  
+					border: 1px dashed silver; 
+					margin: 0px 10px 10px 0px; 
+					height:100px; 
+					width:240px;
+				}
+				
+				.cdElement:hover{
+					background-color: lightgray;
+				}
+			</style>
+			
+	</wicket:head>
+</head>
+		  
+<body>
+	<wicket:panel>
+		<div wicket:id="listViewTitle" />		
+		<div wicket:id="container" class="unknown" style="height: 100%; width:100%; overflow:auto; padding: 10px 10px 10px 10px">
+			<div wicket:id="listView" class="cdElement"> <!-- style="color:black; background-color: white; overflow:hidden; cursor:move;  border: 1px dashed silver; margin: 10px 10px 10px 10px; height:100px; width:300px;" > -->
+				<div style="float:left; height:100px; width:100px; position:relative; top:5px; left:5px; padding:0px 0px 0px 0px;">
+					<img wicket:id="cover" style="height: 90px; width: 90px;" />
+				</div>				
+				<b><div wicket:id="title" style="height:25%"></div></b>
+				<div wicket:id="interpret" style="height:25%"></div>
+				<div style=" text-align: center; float:left; width:70px;"><a title="weitere Informationen" wicket:id="showInfo" href="#"><img style="width:50px" src="bilder/information.png" alt="sd" /></a></div>
+				<div style="text-align: center;"><a title="sample abspielen" wicket:id="playMusic" href="#"><img style="width:50px" src="bilder/play.png" alt="sd" /></a></div>
+			</div>
+		</div>
+		<div wicket:id="audioPlayDialog" style="display: none; text-align:center;">
+		
+        	<audio wicket:id="audio"></audio>                	         	
+        </div>
+        <div wicket:id="cdInfoDialog" style="display: none; position:[10,10];"> 
+        	<table>
+        		<tr>
+        			<img wicket:id="infoCover" src="bilder/missingCover.png" alt="" style="width:400px;"/>
+        		</tr>
+        		<tr>
+        			<td>Titel:</td><td><div wicket:id="infoTitle" /></td>
+        		</tr>
+        		<tr>
+        			<td>Interpret:</td><td><div wicket:id="infoInterpret" /></td>
+        		</tr>
+        		<tr>
+        			<td>Genre:</td><td><div wicket:id="infoGenre" /></td>
+        		</tr>
+        		<tr>
+        			<td>Erscheinungsjahr:</td><td><div wicket:id="infoYear" /></td>
+        		</tr>
+        		<tr>
+        			<td>Beschreibung:</td><td><div wicket:id="infoDescription" /></td>
+        		</tr>
+        		<!-- <tr>
+        			<td>Besitzer:</td><td><div wicket:id="infoFromuser" /></td>
+        		</tr> -->
+        	
+        	</table>        	         	
+        </div>
+	</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<wicket:panel>
+	<table>
+		<tr>
+			<td>
+				<div wicket:id="coverUpload" />
+			</td>
+			<td rowspan="2" align="center">
+				<form wicket:id="cdEntityForm">
+					<div>
+						<table class="cdlibinput">
+							<tr class="cdlibinput">
+								<td>
+									<div class="cdlibtitle">Title:</div>
+								</td>
+								<td>
+									<div class="cdlibinput">
+										<input type="text" wicket:id="titleTextField" />
+									</div>
+								</td>
+							</tr>
+							<tr class="cdlibinput">
+								<td>
+									<div class="cdlibtitle">Interpret:</div>
+								</td>
+								<td>
+									<div class="cdlibinput">
+										<input type="text" wicket:id="interpretTextField" />
+									</div>
+								</td>
+							</tr>
+							<tr class="cdlibinput">
+								<td>
+									<div class="cdlibtitle">Genre:</div>
+								</td>
+								<td>
+									<div class="cdlibinput">
+										<input type="text" wicket:id="genreTextField" />
+									</div>
+								</td>
+							</tr>
+							<tr class="cdlibinput">
+								<td>
+									<div class="cdlibtitle">Jahr:</div>
+								</td>
+								<td>
+									<div class="cdlibinput">
+										<input type="text" wicket:id="yearTextField" />
+									</div>
+								</td>
+							</tr>
+							<tr class="cdlibinput">
+								<td>
+									<div class="cdlibtitle">Beschreibung:</div>
+								</td>
+								<td>
+									<div class="cdlibinput">
+										<input type="text" wicket:id="descriptionTextField" />
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				<div class="libbuttons">
+					<span> <input type="submit" wicket:id="deleteButton"
+						value="Löschen der CD" /></span> <span> <input type="submit"
+						wicket:id="cancelButton" value="Abbrechen" /> &nbsp;
+					</span> <span> <input type="submit" wicket:id="saveButton"
+						value="Speichern" /></span>
+				</div>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td align="center"><audio wicket:id="audio"> Der HTML5 Audio Tag wird
+					nicht unterstützt.
+				</audio>
+				<div wicket:id="musicUpload" /></td>
+		</tr>
+					<tr>
+			<td align="center" colspan="2">
+				<!--   <div class="libbuttons">
+					<span> <input type="submit" wicket:id="deleteButton"
+						value="Löschen der CD" /></span> <span> <input type="submit"
+						wicket:id="cancelButton" value="Abbrechen" /> &nbsp;
+					</span> <span> <input type="submit" wicket:id="saveButton"
+						value="Speichern" /></span>
+				</div> -->
+			</td>
+		</tr>
+	</table>
+	<div wicket:id="feedback"></div>
+</wicket:panel>

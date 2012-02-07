@@ -1,0 +1,557 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.htw.sefw</groupId>
+	<artifactId>jukebox</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>jukebox</name>
+	<description></description>
+	<organization>
+		<name>htw-berlin</name>
+		<url>www.htw-berlin.de</url>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<properties>
+
+		<wicket.version>1.5.3</wicket.version>
+		<jetty.version>7.5.0.v20110901</jetty.version>
+		<aspectj.version>1.6.10</aspectj.version>
+		<slf4j.version>1.6.2</slf4j.version>
+		<spring.version>3.0.6.RELEASE</spring.version>
+		<jpa.version>2.0.0</jpa.version>
+		<junit.version>4.8.1</junit.version>
+		<hibernate.version>3.6.7.Final</hibernate.version>
+		<aspectj-maven-plugin.version>1.3.1</aspectj-maven-plugin.version>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<!-- WICKET DEPENDENCIES -->
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-core</artifactId>
+			<version>${wicket.version}</version>
+		</dependency>
+		<!-- OPTIONAL DEPENDENCY -->
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-extensions</artifactId>
+			<version>${wicket.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-spring</artifactId>
+			<version>${wicket.version}</version>
+			<type>jar</type>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-auth-roles</artifactId>
+			<version>${wicket.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.odlabs.wiquery</groupId>
+			<artifactId>wiquery-core</artifactId>
+			<version>1.5-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.odlabs.wiquery</groupId>
+			<artifactId>wiquery-jquery-ui</artifactId>
+			<version>1.5-SNAPSHOT</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time-hibernate</artifactId>
+			<version>1.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>hibernate</artifactId>
+					<groupId>hibernate</groupId>
+				</exclusion>
+				<exclusion>
+					<groupId>joda-time</groupId>
+					<artifactId>joda-time</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>commons-collections</groupId>
+					<artifactId>commons-collections</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>hsqldb</groupId>
+					<artifactId>hsqldb</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>ehcache</groupId>
+					<artifactId>ehcache</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>dom4j</groupId>
+					<artifactId>dom4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>cglib</groupId>
+					<artifactId>cglib-full</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>antlr</groupId>
+					<artifactId>antlr</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- LOGGING DEPENDENCIES - LOG4J -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+
+		<!-- JUNIT DEPENDENCY FOR TESTING -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<!-- <scope>test</scope> -->
+		</dependency>
+
+		<!-- SPRING DEPENDENCY -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-instrument</artifactId>
+			<version>${spring.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>1.0.1.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.version}</version>
+			<type>jar</type>
+		</dependency>
+
+
+		<!-- AspectJ dependencies -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+
+		<!-- JETTY DEPENDENCIES FOR TESTING -->
+		<dependency>
+			<groupId>org.eclipse.jetty.aggregate</groupId>
+			<artifactId>jetty-all-server</artifactId>
+			<version>${jetty.version}</version>
+			<!-- <scope>provided</scope> -->
+		</dependency>
+
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>8.4-702.jdbc3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+			<!-- <scope>provided</scope> -->
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.0.2.GA</version>
+			<!-- <scope>runtime</scope> -->
+		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+			<!-- <scope>compile</scope> -->
+		</dependency>
+
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2</version>
+			<type>jar</type>
+			<!-- <scope>compile</scope> -->
+		</dependency>
+
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0</version>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jasypt</groupId>
+			<artifactId>jasypt</artifactId>
+			<version>1.8</version>
+			<!-- <scope>compile</scope> -->
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.wicketstuff</groupId>
+			<artifactId>wicketstuff-html5</artifactId>
+			<version>1.5.3</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-examples</artifactId>
+			<version>1.5.0</version>
+			<type>war</type>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<filtering>false</filtering>
+				<directory>src/test/resources</directory>
+			</testResource>
+			<testResource>
+				<filtering>false</filtering>
+				<directory>src/test/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</testResource>
+		</testResources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>1.2-SNAPSHOT</version>
+				<configuration>
+					<url>http://141.45.146.176:8080/manager/html</url>
+					<server>pompadour</server>
+					<!-- <url>http://localhost:8080/manager/html</url> <server>localhost</server> -->
+
+					<path>/jukebox</path>
+				</configuration>
+			</plugin>
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+					<optimize>true</optimize>
+					<debug>true</debug>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.version}</version>
+				<configuration>
+					<connectors>
+						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+							<port>8080</port>
+							<maxIdleTime>3600000</maxIdleTime>
+						</connector>
+						<connector implementation="org.eclipse.jetty.server.ssl.SslSocketConnector">
+							<port>8443</port>
+							<maxIdleTime>3600000</maxIdleTime>
+							<keystore>${project.build.directory}/test-classes/keystore</keystore>
+							<password>wicket</password>
+							<keyPassword>wicket</keyPassword>
+						</connector>
+					</connectors>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.8</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<version>${aspectj-maven-plugin.version}</version>
+				<configuration>
+					<!-- Required as the plugin does not resolve this by default -->
+					<source>1.6</source>
+					<target>1.6</target>
+					<aspectLibraries>
+						<aspectLibrary>
+							<groupId>org.springframework</groupId>
+							<artifactId>spring-aspects</artifactId>
+						</aspectLibrary>
+					</aspectLibraries>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>test-compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											aspectj-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.3.1,)
+										</versionRange>
+										<goals>
+											<goal>test-compile</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>Apache Nexus</id>
+			<url>https://repository.apache.org/content/repositories/snapshots/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/
+            </url>
+			<layout>default</layout>
+		</repository>
+
+		<repository>
+			<id>maven.org</id>
+			<name>maven.org Repository</name>
+			<url>http://repo1.maven.org/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>jboss</id>
+			<name>JBoss repository</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public</url>
+		</repository>
+
+		<repository>
+			<id>download-java-net</id>
+			<url>http://download.java.net/maven/2/</url>
+		</repository>
+
+		<repository>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<id>wicketstuff-snapshots</id>
+			<url>http://wicketstuff.org/maven/repository</url>
+		</repository>
+
+		<repository>
+			<id>wiquery-maven-repo</id>
+			<name>WiQuery repository</name>
+			<url>https://wiquery.googlecode.com/svn/repo/</url>
+		</repository>
+
+		<repository>
+			<id>wiquery-plugins-maven-repo</id>
+			<name>WiQuery Plugins repository</name>
+			<url>http://wiquery-plugins.googlecode.com/svn/m2repo</url>
+		</repository>
+
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>codehaus-snapshots</id>
+			<url>http://nexus.codehaus.org/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</pluginRepository>
+
+	</pluginRepositories>
+</project>

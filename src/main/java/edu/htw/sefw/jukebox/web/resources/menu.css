@@ -1,0 +1,147 @@
+#menu {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	line-height: 55px;
+	display: inline-block;
+	float: left;
+	z-index: 1000;
+}
+
+#menu a {
+	color: #d2d2d2;
+	text-decoration: none;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: 12px;
+}
+
+#viewTransactionLinkLabel {
+	color: #ff0000;
+	text-decoration: none;
+	font-weight: bold; ;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: 14px;
+}
+
+#menu>li {
+	background: #161616 none repeat scroll 0 0;
+	cursor: pointer;
+	float: left;
+	position: relative;
+	padding: 0px 10px;
+}
+
+
+
+/* sub-menus*/
+#menu ul {
+	padding: 0px;
+	margin: 0px;
+	display: block;
+	display: inline;
+}
+
+#menu li ul {
+	position: absolute;
+	left: -10px;
+	top: 0px;
+	margin-top: 45px;
+	width: 150px;
+	line-height: 16px;
+	background-color: #d2d2d2;
+	color: #0395CC; /* for IE */
+	display: none;
+}
+
+#menu li:hover {	
+	background-color: #292929;
+}
+
+#menu li:hover ul {
+	display: block;
+	background-color: #292929;
+}
+
+#menu li ul li {
+	display: block;
+	margin: 5px 20px;
+	padding: 5px 0px;
+	border-top: dotted 1px #606060;
+	list-style-type: none;
+}
+
+#menu li ul li:first-child {
+	border-top: none;
+}
+
+#menu li ul li a {
+	display: block;
+	color: #d2d2d2;
+}
+
+#menu li ul li a:hover {
+	color: #e7e7e7;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: 14px;
+}
+
+/* main submenu */
+#menu #main {
+	left: 0px;
+	top: -20px;
+	padding-top: 20px;
+	background-color: #161616;
+	color: #fff;
+	z-index: 999;
+}
+
+/* corners*/
+#menu .corner_inset_left {
+	position: absolute;
+	top: 0px;
+	left: -12px;
+	background-color: #161616;
+}
+
+#menu .corner_inset_right {
+	position: absolute;
+	top: 0px;
+	left: 150px;
+	background-color: #161616;
+}
+
+#menu .last {
+	background: transparent none repeat scroll 0% 0%;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	position: relative;
+	background-color:#161616;
+	border: none;
+	height: 0px;
+}
+
+#menu .corner_left {
+	position: absolute;
+	background-color: #161616;
+	left: 0px;
+	top: 0px;
+	height: 20px;
+}
+
+#menu .corner_right {
+	position: absolute;
+	background-color: #161616;
+	left: 132px;
+	top: 0px;
+	height: 20px;
+	width: 18px;
+}
+
+#menu .middle {
+	position: absolute;
+	left: 18px;
+	height: 20px;
+	width: 115px;
+	top: 0px;
+}

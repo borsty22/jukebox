@@ -1,0 +1,72 @@
+<wicket:panel>
+
+	<div align="center">
+		
+		<br>
+		<table style="width: 100%;">
+			<tr>
+				<td align="right" width="50%"><div wicket:id="imageUploadPanel" /></td>
+				<td align="left" width="50%">
+					<form wicket:id="userEntityForm" style="float: left;">
+						<table>
+							<tr>
+								<td>Vorname:</td>
+								<td><input type="text" wicket:id="firstNameTextfield" /></td>
+							</tr>
+
+							<tr>
+								<td>Nachname:</td>
+								<td><input type="text" wicket:id="lastNameTextfield" /></td>
+							</tr>
+
+							<tr>
+								<td>Username:</td>
+								<td><input type="text" wicket:id="userNameTextfield" /></td>
+							</tr>
+
+							<tr>
+								<td>E-Mail:</td>
+								<td><input type="text" wicket:id="emailTextfield" /></td>
+							</tr>
+
+							<tr>
+								<td>Geschlecht:</td>
+								<td><select name="GenderDropDownChoice"
+									wicket:id="genderDropDownChoice"></select></td>
+							</tr>
+
+							<tr>
+								<td>UserType:</td>
+								<td><select name="UserTypeDropDownChoice"
+									wicket:id="userTypeDropDownChoice"></select></td>
+							</tr>
+
+							<tr>
+								<td>Passwort:</td>
+								<td><input type="password" wicket:id="passwordTextfield1" /></td>
+							</tr>
+
+							<tr>
+								<td>Passwort Wiederholung:</td>
+								<td><input type="password" wicket:id="passwordTextfield2" /></td>
+							</tr>
+
+							<tr>
+								<td style="text-align: center; padding-top: 5px;" colspan="2">
+									<input type="submit" wicket:id="deleteButton" value="Löschen des Profils" />
+									<input type="submit" wicket:id="cancelButton" value="Abbrechen" /> &nbsp;
+									<input type="submit" wicket:id="saveButton" value="Speichern" />
+								</td>
+							</tr>
+						</table>
+
+					</form>
+				</td>
+			</tr>
+		</table>
+
+		<a href="#" wicket:id="userCdLibLink">zur CD-Jukebox</a>
+
+	</div>
+
+</wicket:panel>

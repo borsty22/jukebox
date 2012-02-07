@@ -1,0 +1,163 @@
+th.panel {
+	color:white;
+	font-family: Arial;
+	text-align: center;
+	width: 12.5%;
+	background-color:#585858;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:6px;
+	padding-bottom:6px;
+}
+th.headerpanelLogin {
+	text-align: right;
+	width: 50%;
+}
+table.panel {
+	border-collapse: collapse;
+	width: 100%;
+}
+table.panelbottom {
+	position:fixed;
+	bottom:0px;
+}
+
+#topPanel {	
+	background-color: #161616;
+	padding-top:20px;			
+}
+
+#bottomPanel {}
+
+#entityPanel div form {
+	float:left;
+}
+
+/*********** LOGIN PANEL ***********/
+#loginPanel {
+	float:right;
+	background-color: #161616 ;
+	color: #d2d2d2 ;
+	/*height: 140px ;*/
+	padding: 5px;
+}
+
+#loginPanel div {
+	float: left;
+	margin: 1px;
+	margin-right: 3px ;
+}
+
+#loginPanel .inputIdentifier {
+	width: 80px ;
+	text-align: left ;
+}
+
+#loginPanel .inputField {
+	width: 120px ;
+}
+
+#loginPanel .button {
+	float: right ;
+}
+
+/*********** JUKEBOX STANDARDS ***********/
+
+.tableUserPicture img {
+	height: 50px ;
+}
+
+/*********** Cd Library ***********/
+div.cdlibcoverpanel {
+	float: left;
+}
+div.cdlibinputpanel {
+	float: left;
+}
+tr.cdlibinput {
+	text-align: left;
+}
+
+/*********** Components ***********/
+img.imageupload {
+	max-width:200px;
+	max-height:200px;
+}
+/*********** Tables ***********/
+
+table.dataview {
+	width: 100%;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+    text-align: left;
+    vertical-align: middle;
+    border-spacing: 0px;
+    padding: 5px;
+}
+
+table.dataview th {
+	margin-left: 0px;
+    text-align: center;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    background-color: #161616;
+    color: #d2d2d2 ;
+    padding: 5px;
+}
+
+table.dataview td {
+	    padding: 3px;
+	    text-align: center;
+}
+
+table.dataview th a:LINK {
+	color: #d2d2d2 ;
+}
+
+div.navigatorLabel {
+	 float: right;
+}
+
+div.navigator {
+ 	float: left;
+}
+/*********** Transaction Site ***********/
+td.userpanels {
+	vertical-align: top;
+}
+table.userpanels {
+	height: 100%;
+}
+/*********** All Sites ***********/
+body {
+	background-color: #F2F2F2;
+	margin: 0px;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: 14px;
+	height: 100%;
+}
+html {
+	height: 100%;
+}
+table.pagetable {
+	margin: 0;
+    padding: 0;
+	height:100%;
+	width: 100%;
+	border: none;
+}
+td.pagemargin {
+	background-color: #F2F2F2;
+	width: 10%;
+
+}
+td.pagecenter {
+	background-color: white;
+	vertical-align: top;
+}
+span.header {
+	color: #161616;
+	line-height:150%;
+	font-size:150%;
+	
+}
